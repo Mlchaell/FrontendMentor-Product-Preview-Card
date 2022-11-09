@@ -69,86 +69,57 @@ input,button,textarea,select {
 ================
 */
 
-html {
+body {
   background-color: var(--cream);
 }
 
 .container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
 }
 
 .card {
   display: flex;
-  border-radius: 20px;
+  flex-direction: column;
+  margin: 0em 1em 0em 1em;
+  max-width: 25em;
+  max-height: 40em;
+  border-radius: 15px;
   overflow: hidden;
-  max-height: 34em;
-  max-width: 35em;
-  margin-left: 2em;
-  margin-right: 2em;
 }
 
-.col-2 {
+.card-content {
   display: flex;
   flex-direction: column;
-  padding: 2em;
-}
-
-.card img {
-  min-height: 100%;
-  max-width: 50%;
+  margin: 1.5em;
 }
 
 .card-header {
-  font-size: 2rem;
-  line-height: 2.5rem;
   font-family: 'Fraunces', serif;
-  margin-top: 1em;
+  font-size: 2rem;
+  line-height: 1em;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+.card-body {
   margin-bottom: 1em;
 }
 
 .tag {
-  text-transform: uppercase;
-  letter-spacing: .5em;
   font-family: 'Montserrat', sans-serif;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .2em;
 }
 
 .pricing {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 1em;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 }
-
-.btn {
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-  color: white;
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--dark-cyan);
-  border: none;
-  border-radius: 10px;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-
-.btn:hover {
-  background-color: hsl(158, 36%, 15%);
-}
-
-.btn > img {
-  margin-right: 1em;
-}
-
-/*
-================
-=HELPER CLASSES=
-================
-*/
 
 .cur-price {
   font-family: 'Fraunces', serif;
@@ -157,8 +128,36 @@ html {
 }
 
 .og-price {
-  color: var(--dark-grayish-blue);
+  align-self: center;
+  text-decoration: line-through;
 }
+
+.add-to-cart-btn {
+  display: flex;
+  align-self: center;
+  background-color: var(--dark-cyan);
+  color: white;
+  padding: 1em 6em 1em 6em;
+  border: none;
+  border-radius: 10px;
+}
+
+.add-to-cart-btn > img {
+  align-self: center;
+  margin-right: 0.5em;
+  max-width: 1em;
+  max-height: 1em;
+}
+
+.add-to-cart-btn:hover {
+  background-color: hsl(158, 36%, 16%);
+}
+
+/*
+================
+=HELPER CLASSES=
+================
+*/
 
 .bg-white {
   background-color: white;
@@ -174,34 +173,27 @@ html {
 ===============
 */
 
-@media screen and (max-width: 575px) {
+@media (min-width: 640px) {
   .card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    max-width: 40em;
+    min-height: 30em;
   }
 
-  .card-header {
-    margin-top: .2em;
-    margin-bottom: .5em;
-  }
-  
-  .card img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: fill;
+  .img-header {
+    max-width: 20em;
+    content: url("/imgs/image-product-desktop.jpg");
   }
 
-  .tag {
+  .card-body {
     margin-top: 1em;
-    font-size: .6rem;
+    margin-bottom: 1em;
   }
 
-  .col-2 {
-    padding: 0em 1em 1em 1em;
-  }
-
-  .pricing {
-    margin-bottom: .8em;
+  .add-to-cart-btn {
+    margin-top: 1em;
+    padding: 1em 5em 1em 5em;
   }
 }
 
